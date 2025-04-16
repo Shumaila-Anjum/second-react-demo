@@ -1,16 +1,22 @@
 name: Test Project
+
 on: push
+
 jobs:
-  testjob: 
+  test-job:  # 👈 no spaces, use hyphen not space
     runs-on: ubuntu-latest
-    steps: 
-      - name: Get code
+
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v3
-      - name: Install NodeJS
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
-        with: 
-          node-version: 20
+        with:
+          node-version: '20'  # ✅ use quotes, correct indentation
+
       - name: Install dependencies
         run: npm ci
+
       - name: Run tests
         run: npm test
