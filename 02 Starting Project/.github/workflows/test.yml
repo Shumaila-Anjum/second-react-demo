@@ -1,7 +1,7 @@
 name: Test Project
 on: push
 jobs:
-  test job: 
+  testjob: 
     runs-on: ubuntu-latest
     steps: 
       - name: Get code
